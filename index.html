@@ -3,24 +3,43 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Guess DOTA 2 Hero</title>
+  <title>Final Project h8-p0 / By Afdallismen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="assets/css/styles.css">
 </head>
 <body>
-  <p>High score: <span>0</span></p>
-  <p>Current score: <span>0</span></p>
-  <audio controls>
-    <source src="" type="audio/mpeg">
+  <div class="container">
+    <div class="title">
+      <h2>DOTA 2 Mini Quizz</h2>
+    </div>
+    <div class="question">
+      <p>Guess which DOTA 2 hero make this voice ?</p>
+    </div>
+    <div class="result">
+      <div class="fail-feedback">
+        <p>Wrong answer! Loading next voice</p>
+      </div>
+      <div class="success-feedback">
+        <blockquote><q>Lorem ipsum</q>, &mdash; <cite>Abaddon</cite></blockquote>
+      </div>
+    </div>
+    <div>
+      <button class="audio-controls" id="play-btn"><img src="assets/images/icons8-circled-play-100.png">PLAY</button>
+      <button class="audio-controls" id="next-btn"><img src="assets/images/icons8-fast-forward-100.png">NEXT</button>
+    </div>
+    <div class="answer">  
+      <ul class="hero-choices-list">
+        <li><input type="radio" name="hero-choices" disabled>First choice</li>
+        <li><input type="radio" name="hero-choices" disabled>Second choice</li>
+        <li><input type="radio" name="hero-choices" disabled>Third choice</li>
+      </ul>
+    </div>
+  </div>
+  <audio id="hero-voice">
+    <source id="hero-voice-source" src="" type="audio/mpeg">
     Your browser does not support the audio tag.
   </audio>
-  <ul>
-    <li><input type="radio" name="guess">Lorem</li>
-    <li><input type="radio" name="guess">Lorem</li>
-    <li><input type="radio" name="guess">Lorem</li>
-  </ul>
-  <button>Skip</button>
-  <script src="assets/js/heroes.js"></script>
+  <script src="assets/js/data.js"></script>
   <script src="assets/js/script.js"></script>
 </body>
 </html>

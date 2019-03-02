@@ -1,3 +1,74 @@
-audio {
-    border-radius: 2px;
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.fail-feedback > p {
+    padding: 8px 12px;
+    background-color: salmon;
+}
+
+.success-feedback > blockquote {
+    margin: 0;
+    padding: 8px 12px;
+    background-color: springgreen;
+}
+
+.container {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+} 
+
+.title {
+    border-bottom: #ddd 1px solid;
+}
+
+.result, .title {
+    margin-bottom: 20px;
+}
+
+.container, .answer {
+    margin-top: 20px;
+}
+
+.hero-choices-list {
+    padding: 0;
+}
+
+.hero-choices-list > li {
+    background-color: #ddd;
+    list-style-type: none;
+    padding: 10px;
+    margin-bottom: 2px;
+    text-align: center;
+}
+
+ul.hero-choices-list > li:active {
+    background-color: #999;
+}
+
+ul.hero-choices-list > li:hover {
+    cursor: pointer;
+    background-color: #eee;
+    background-image: url("/assets/images/Abaddon_icon.png");
+}
+
+input[name*="hero-choices"] {
+    display: none;
+}
+
+button.audio-controls {
+    border: 0;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 4px;
+}
+
+button.audio-controls:hover {
+    outline: #888 1px solid;
+    cursor: pointer;
+}
+
+button.audio-controls > img {
+    width: 48px;
+    vertical-align: middle;
 }
