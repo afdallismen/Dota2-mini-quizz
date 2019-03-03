@@ -47,13 +47,22 @@ function getHeroChoice (currentHero) {
     return heroChoice
 }
 
-function takeGuess (currentHero) {
+function takeGuess (currentHero, voicePath) {
     return function (guess) {
         var result = document.getElementsByClassName("result")[0]
         result.setAttribute("style", "display: unset;")
         if (currentHero.id === guess) {
             var successFeedback = document.getElementsByClassName("success-feedback")[0]
             successFeedback.setAttribute("style", "display: unset;")
+
+            var quote = ""
+            for (var i = 0; i < currentHero.voices.length; i++) {
+                if (voicePath.indexOf(currentHero.voices[i].filename) !== -1) {
+                    quote = currentHero.voices[i].subtitle
+                }
+            }
+            document.getElementsByTagName("blockquote")[0].children[0].innerHTML = quote
+            document.getElementsByTagName("blockquote")[0].children[1].innerHTML = currentHero.name
 
             var audio = document.getElementById("hero-voice")
             audio.play()
@@ -107,6 +116,9 @@ function generateRadioButton (choices, onClick) {
     for (var i = 0; i < lists.length; i++) {
         lists[i].onclick = function () {
             this.children["hero-choices"].setAttribute("selected", true)
+            for (var j = 0; j < lists.length; j++) {
+                lists[j].onclick = function () {}
+            }
             onClick(this.children["hero-choices"].value)
         }
     }
@@ -142,7 +154,7 @@ window.onload = function () {
 
         // generate radio button
         var choices = getHeroChoice(currentHero)
-        generateRadioButton(shuffle(choices), takeGuess(currentHero))
+        generateRadioButton(shuffle(choices), takeGuess(currentHero, voicePath))
 
         // register audio controls event
         registerEventListener()

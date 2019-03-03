@@ -1,8 +1,10 @@
 body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: whitesmoke;
 }
 
 .fail-feedback > p {
+    margin-top: 0;
     padding: 8px 12px;
     background-color: salmon;
 }
@@ -21,6 +23,7 @@ body {
 
 .title {
     border-bottom: #ddd 1px solid;
+    letter-spacing: 0.2em;
 }
 
 .result, .title {
