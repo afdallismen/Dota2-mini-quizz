@@ -9,7 +9,7 @@ var data = {
             },
             {
                 "filename": "Abad_levelup_06.mp3",
-                "substitle": "Look upon the Lord of Avernus and beware."
+                "subtitle": "Look upon the Lord of Avernus and beware."
             }
         ]
     },
